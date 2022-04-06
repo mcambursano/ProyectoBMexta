@@ -1,0 +1,9 @@
+#archivos a ignorar
+etc.html
+
+#ignorar archivos especificos
+*.etc
+
+
+#ignorar carpetas
+/carpetas/etc
