@@ -1,255 +1,952 @@
-/* estilos generales */ 
-* {
-	font-family: 'Lato', sans-serif;
-	margin: 0;
+/* MEDIA QUERIES */
+
+/************************
+        DESKTOP
+*************************/
+@media (min-width: 1024px){
+
+    /* Estilos generales Index*/
+    * {
+        margin: 0;padding: 0;
+        box-sizing: border-box;
+        font-family: 'Lato', sans-serif;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        background-color: lightblue;
+    }
+
+    header,nav, #productos, #servicios, aside, footer {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+     Bordes para Definir tamaños
+   
+     .border { 
+        border: solid 1px black;
+    }
+
+    nav a {
+        background-color: #bee0f8 ;
+        color: black;
+        width: 120px;
+        height: 30px;
+        margin-left: 5px;
+        padding: 10px 25px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    nav a:hover {
+        background-color: #5d91f8;
+        color: Black;
+        cursor: pointer;
+    }
+
+    .active {
+        background-color: #242994;
+        color: white;
+    }
+
+    .imgLogo {
+        width: 300px;
+    }
+
+    article {
+        background-color: #fff;
+        border-radius: 4px;
+        margin: 5px;
+        padding: 7px;
+        text-align: center;
+    }
+
+    .articulo {
+        width: 100px;
+    }
+
+    /*Logo Header*/
+    .imgLogo { /* estilo para logo */
+        width: 200px;
+    }
+
+    /*menu nav*/
+    nav a {
+        text-align: center;
+        background-color: #bee0f8 ;
+        color: black;
+        height: 50%;
+        margin-left: 5px;
+        padding: 10px 25px;
+        border-radius: 5px;
+    }
+
+    nav a:hover {
+        background-color: #5d91f8;
+        color: Black;
+        cursor: pointer;
+    }
+
+    .active {
+        background-color: #242994;
+        color: white;
+    }
+
+
+    /* GRIDS por AREAS */
+
+    /* Grids index */
+    #gridAreaIndex {
+        display: grid; 
+        grid-template-areas: /* 3 columnas y 3 filas */
+        "cabeza menu menu" /* fila 1 */
+        "productos productos productos" /* fila 2 */
+        "pie pie pie" /* fila 3 */
+        ;
+        grid-template-columns: 20% auto 15%;
+        grid-template-rows: 1fr 4fr 1fr;
+
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    /* Grids Footer */
+    #gridAreaFooter {
+        display: grid; /* estructura grid por areas */
+        grid-template-areas: /* 3 columnas y 1 filas */
+        "texto datos mapa" /* fila 1 */
+        ;
+        
+        grid-template-columns: 33% 33% 33%;
+       grid-template-rows: 1fr
+        
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    /* Index Grid */
+    header {
+        grid-area: cabeza;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+    }
+
+    footer {
+        grid-area: pie;
+        background-color: gray;
+    }
+
+    #productos {
+        grid-area: productos;   
+        display: flex;
+        padding: 10px 0 10px 0;
+    }
+
+    #servicios {
+        grid-area: servicios;     
+    }
+
+    nav {
+        grid-area: menu;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: center;
+        background-color: lightblue;
+    }
+
+    /* Index footer */
+    #texto {
+        grid-area: texto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    #contacto {
+        grid-area: datos;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    #mapa {
+        grid-area: mapa;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    /* Estilo Index Imagen */
+    .destacado {
+        width: 100%;
+        text-align: right;
+        color: #272e3c;
+        background: url('../../img/slider.png');
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+
+    .destacado h2 {
+        padding-top: 10px;
+        margin-top: 20px;
+        margin-right: 50px;
+        color: white;
+        font-weight: bold; 
+        font-size: 3rem;
+
+    }
+
+    .destacado p {
+        font-weight: normal; 
+        font-size: 1.2rem;
+        margin: 10px 50px 50px auto;
+        width: 30%;
+        color: white;
+
+    }
+    .footterPading {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .mapaFooter{ /* mapa footer */
+        width: 30vw;
+    }
+    /* estilo clientes */
+   
+    #gridAreaNosotros {
+        display: grid; /* estructura grid por areas */
+        grid-template-areas: /* 4 columnas y 2 filas */
+        "title1 title1" /* fila 1 */
+        "text1 img" /* fila 1 */
+        "titulolista titulolista" /* fila 1 */
+        "lista lista" /* fila 1 */
+        "text2 text2" /* fila 1 */
+        ;
+
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 0.2fr 2fr 1fr 1.3fr 0.5fr;
+
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    /* Index footer */
+    #tituloNosotros{
+        grid-area: title1;
+        text-align: center;
+    }
+
+    #texto1Nosotros {
+        grid-area: text1;
+        padding: 10px 50px 10px 100px ;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+
+    #imgNosotros {
+        grid-area: img;
+        height: 300px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+
+    #tituloListaNosotros {
+        grid-area: titulolista;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+
+    #listaNosotros {
+        grid-area: lista;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+
+    #texto2Nosotros {
+        padding: 10px 150px 10px 150px ;
+        grid-area: text2;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+    .imgNosotros2 {
+        height: 300px;
+    }
+
 }
 
-body {
-	background-color: lightblue;
+/************************
+        TABLET
+************************/
+@media (min-width: 480px) and (max-width: 1023px) {
+
+        /* Estilos generales Index*/
+        * {
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+    
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: lightblue;
+        }
+    
+        header,nav, #productos, #servicios, aside, footer {
+            padding: 15px;
+        }
+    
+        h1 {
+            font-size: 3rem;
+        }
+        /* Bordes para Definir tamaños
+        .border { 
+            border: solid 1px black;
+        }*/
+    
+        nav a {
+            text-align: center;
+            background-color: #bee0f8 ;
+            color: black;
+            height: 50%;
+            margin-left: 5px;
+            padding: 10px 25px;
+            border-radius: 5px;
+        }
+    
+        nav a:hover {
+            background-color: #5d91f8;
+            color: Black;
+            cursor: pointer;
+        }
+    
+        .active {
+            background-color: #242994;
+            color: white;
+        }
+    
+        article {
+            background-color: #fff;
+            border-radius: 4px;
+            margin: 5px;
+            padding: 7px;
+            text-align: center;
+        }
+    
+        .articulo {
+            width: 100px;
+        }
+    
+        /*Logo Header*/
+        .imgLogo {
+            width: 250px;
+            text-align: center;
+        }
+    
+        /*menu nav*/
+        nav a {
+            text-align: center;
+            background-color: #bee0f8 ;
+            color: black;
+            height: 50%;
+            margin-left: 5px;
+            padding: 10px 25px;
+            border-radius: 5px;
+        }
+    
+        nav a:hover {
+            background-color: #5d91f8;
+            color: Black;
+            cursor: pointer;
+        }
+    
+        .active {
+            background-color: #242994;
+            color: white;
+        }
+    
+    
+        /* GRIDS por AREAS */
+    
+        #gridAreaIndex {
+            display: grid; /* estructura grid por areas */
+            grid-template-areas: /* 3 columnas y 4 filas */
+            "cabeza cabeza" /* fila 1 */
+            "menu menu"
+            "productos productos " /* fila 2 */
+            "pie pie" /* fila 4 */
+            ;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 1fr 1fr 10fr 1fr;
+    
+            /* espacios  */
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+        }
+        #gridAreaFooter {
+            display: grid; /* estructura grid por areas */
+            grid-template-areas: /* 3 columnas y 1 filas */
+            "texto datos mapa" /* fila 1 */
+            ;
+            
+            grid-template-columns: 33% 33% 33%;
+           /* grid-template-rows: 1fr;*/
+            
+            /* espacios  */
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+        }
+    
+        /* Index Grid */
+        header {
+            grid-area: cabeza;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: center;
+        }
+    
+        footer {
+            grid-area: pie;
+            background-color: gray;
+        }
+    
+        #productos {
+            grid-area: productos;   
+            display: flex;
+            padding: 10px 0 10px 0;
+        }
+    
+        #servicios {
+            grid-area: servicios;     
+        }
+    
+        nav {
+            grid-area: menu;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            align-content: center;
+            background-color: lightblue;
+        }
+    
+    
+        /* Index footer */
+        #texto {
+            grid-area: texto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+    
+        #contacto {
+            grid-area: datos;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+    
+        #mapa {
+            grid-area: mapa;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+    
+        /* Estilo Index Imagen */
+        .destacado {
+            width: 100%;
+            text-align: right;
+            color: #272e3c;
+            background: url('../../img/slider.png');
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+    
+        .destacado h2 {
+            padding-top: 10px;
+            margin-top: 20px;
+            margin-right: 50px;
+            color: white;
+            font-weight: bold; 
+            font-size: 2.5rem;
+    
+        }
+    
+        .destacado p {
+            font-weight: normal; 
+            font-size: 1rem;
+            margin: 10px 50px 50px auto;
+            width: 40%;
+            color: white;
+    
+        }
+        .footterPading {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .mapaFooter{ /* mapa footer */
+            width: 30vw;
+        }
+        /* estilo clientes */
+   
+        #gridAreaNosotros {
+            display: grid; /* estructura grid por areas */
+            grid-template-areas: /* 4 columnas y 1 filas */
+            "title1" /* fila 1 */
+            "img" /* fila 1 */
+            "text1" /* fila 1 */
+            "titulolista " /* fila 1 */
+            "lista " /* fila 1 */
+            "text2 " /* fila 1 */
+            ;
+
+            grid-template-columns: 100%;
+            grid-template-rows: 0.2fr 2fr auto auto 1.3fr auto ;
+
+            /* espacios  */
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+        }
+
+        /* Nosotros */
+        #tituloNosotros{
+            grid-area: title1;
+            text-align: center;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        #texto1Nosotros {
+            grid-area: text1;
+            padding: 10px 50px 10px 50px ;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+        }
+
+        #imgNosotros {
+            grid-area: img;
+            text-align: center;
+        }
+
+        #tituloListaNosotros {
+            grid-area: titulolista;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+        }
+
+        #listaNosotros {
+            grid-area: lista;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+        }
+
+        #texto2Nosotros {
+            padding: 10px 150px 10px 150px ;
+            grid-area: text2;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .imgNosotros2 {
+            height: 250px;
+        }
 }
 
-header{
-	width: 100%; 
-}
+/************************
+        SMARTPHONE
+*************************/
+@media (max-width: 479px){
 
-table {
-	width: 100%;
-}
-footer {
-	background: gray;
-}
+    /* Estilos generales Index*/
+    * {
+        margin: 0;padding: 0;
+        box-sizing: border-box;
+        font-family: 'Lato', sans-serif;
+    }
 
-/*menu nav*/
-nav {
-    padding: 15px;
-    text-align: center;
-    background-color: lightblue;
-}
+    body {
+        width: 100%;
+        height: 100vh;
+        background-color: lightblue;
+    }
 
-nav a {
-    background-color: #bee0f8 ;
-    color: black;
-    width: 120px;
-    height: 30px;
-    margin-left: 5px;
-    padding: 10px 25px;
-    text-align: center;
-    border-radius: 5px;
-}
+    header,nav, #productos, #servicios, aside, footer {
+        padding: 15px;
+    }
 
-nav a:hover {
-    background-color: #5d91f8;
-    color: Black;
-    cursor: pointer;
-}
+    h1 {
+        font-size: 3rem;
+    }
 
-.active {
-    background-color: #242994;
-    color: white;
-}
+    /* Bordes para Definir tamaños
+    .border { 
+        border: solid 1px black;
+    }*/
 
-.imgLogo { /* estilo para logo */
-	width: 20%;
-	margin-left: 40%;
-}
+    nav a {
+        background-color: #bee0f8 ;
+        color: black;
+        width: 120px;
+        height: 30px;
+        margin-left: 5px;
+        padding: 10px 25px;
+        text-align: center;
+        border-radius: 5px;
+    }
 
-/* index */ 
+    nav a:hover {
+        background-color: #5d91f8;
+        color: Black;
+        cursor: pointer;
+    }
 
-/* estilo img central */
+    .active {
+        background-color: #242994;
+        color: white;
+    }
 
-.destacado {
-	width: 100%;
-	height:700px;
-	text-align: right;
-	color: #272e3c;
-	background: url('../../img/slider.png');
-	background-size: cover;
-	background-position: bottom;
-	background-repeat: no-repeat;
-}
+    .imgLogo {
+        width: 300px;
+    }
 
-.destacado h2 {
-	padding-top: 10px;
-	margin-top: 20px;
-	margin-right: 50px;
-	color: white;
-	font-weight: bold; 
-	font-size: 3rem;
+    article {
+        background-color: #fff;
+        border-radius: 4px;
+        margin: 5px;
+        padding: 7px;
+        text-align: center;
+    }
 
-}
+    .articulo {
+        width: 100px;
+    }
 
-.destacado p {
-	font-weight: normal; 
-	font-size: 1.2rem;
-	margin: 10px 50px 50px auto;
-	width: 30%;
-	color: white;
+    /*Logo Header*/
+    .imgLogo { /* estilo para logo */
+        width: 200px;
+    }
 
-}
+    /*menu nav*/
+    nav a {
+        text-align: center;
+        background-color: #bee0f8 ;
+        color: black;
+        height: 25%;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        padding: 10px 25px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: baseline;
+        align-content: center;
+    }
 
-/* footer */
+    nav a:hover {
+        background-color: #5d91f8;
+        color: Black;
+        cursor: pointer;
+    }
 
-.tablaEncabezado {
-	text-align: center;
-	font-family: tahoma;
-	font-size: 2rem;  
-	font-weight: lighter;
-}
-.tablaTxtIzq {
-	font-size: 1rem;
-	font-weight: 500;
-	margin-left: 50px;
-	text-align: left;
-	line-height: 20px;
-	width: 33%;
-	padding-left: 55px;
-	font-weight: bold; 
-}
-.tablaTxtCen {
-	font-style: italic;
-	font-size: 1rem;
-	text-align: center;
-
-	width: 33%;
-}
-.tablaTxtDer {
-	font-size: 1rem; 
-	font-weight: normal; 
-	font-style: normal; 
-	text-align: center;
-	width: 33%;
-}
-
-.mapaFooter{ /* mapa footer */
-	width: 30vw;
-}
-
-/*nosotros*/
-
-#nosotros {
-	margin-top: 25px;
-
-}
-
-#nosotros article h2 { 
-	text-align: center;
-}
-
-#nosotros article table {
-	text-align: center;
-}
-
-#nosotros article table tr p {
-	text-align: justify;
-	padding: 5px 90px 5px 100px;
-}
-#nosotros article table tr img {
-	text-align: center;
-	padding: 5px 100px 5px 50px;
-}
-
-.listaCaract {
-	text-align: left;
-	display: inline-block;
-	padding-bottom: 25px;
-}
-.centradoLista {
-	text-align: center;
-}
-
-#nosotros article .parrafoNosotros {
-	margin: 5px 100px 55px 100px;
-	text-align: left;
-	font-weight: bold;
-}
+    .active {
+        background-color: #242994;
+        color: white;
+    }
 
 
-/*clientes*/
-#clientes {
-	background-color: #194D8C;
-	color: #a9c9f0;
-	text-align: center;
-	padding: 25px 50px 25px 50px;
-}
+    /* GRIDS por AREAS */
 
-#clientes table {
-	text-align: center;
-	padding: 50px 25px 5px 25px;
-}
+    #gridAreaIndex {
+        display: grid; /* estructura grid por areas */
+        grid-template-areas: /* 1 columnas y 4 filas */
+        "cabeza" /* fila 1 */
+        "menu" /* fila 2 */
+        "productos" /* fila 3 */
+        "pie" /* fila 4 */
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 2fr 30fr 5fr;
 
-/*servicios*/
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+    #gridAreaFooter {
+        display: grid; /* estructura grid por areas */
+        grid-template-areas: /* 3 columnas y 1 filas */
+        "texto" /* fila 1 */
+        "datos" /* fila 1 */
+        "mapa" /* fila 1 */
+        ;
+        
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr;
+        
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px ;
+    }
 
-#servicios {
-	padding: 35px 50px 25px 50px;
-}
+    /* Index Grid */
+    header {
+        grid-area: cabeza;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+    }
 
-#servicios h2 {
-	text-align: center;
-	padding-bottom: 35px;
-}
+    footer {
+        grid-area: pie;
+        background-color: gray;
+    }
 
-.tablaExterna {
-	display: inline-block;
-	text-align: center;
-}
-.tablaInterna {
-	width: 	45%;
-	height: 50px;
-	margin: 5px 15px 5px 25px ;
-	border: solid 1px black;
-	margin: 5px;
-}
-.tablaInterna p {
-	text-align: left;
-	margin-left: 5px;
-}
+    #productos {
+        grid-area: productos;
+        display: flex;
+        padding: 10px 0 10px 0;
+    }
 
-/*contacto*/ 
+    nav {
+        grid-area: menu;
+        height: 100%;
+        background-color: lightblue;
+    }
 
-form {
-	background: white;
-	border-radius: 10px;
-	padding:2rem;
-	width: 40%;
-	margin:2rem auto;
-}
 
-label {
-	display: block;
-	margin: 0.8rem 0 0.3rem 0;
-}
+    /* Index footer */
+    #texto {
+        grid-area: texto;
+        text-align: center;
+        font-weight: bold; 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-input {
-	width: 95%;
-	padding: 0.3rem;
-	border: solid 1px gray;
-	border-radius: 5px;
-}
+    #contacto {
+        grid-area: datos;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-.espacioSelect {
-	width: 85%;
-	margin: 0.8rem 0 0.5rem 0;
+    #mapa {
+        grid-area: mapa;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-}
+    /* Estilo Index Imagen */
+    .destacado {
+        width: 100%;
+        text-align: right;
+        color: #272e3c;
+        background: url('../../img/slider.png');
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
 
-.btn {
-	width: 96%;
-	margin-top: 0.7rem;
-	color: white;
-	padding: 0.3rem;
-	background-color: #242994;
-	justify-content:center;
-}
+    .destacado h2 {
+        padding-top: 10px;
+        margin-top: 20px;
+        margin-right: 50px;
+        color: white;
+        font-weight: bold; 
+        font-size: 2rem;
 
-.consultaBox {
-	width: 96%;
-    padding: 0.3rem;
-    border: solid 1px gray;
-    border-radius: 5px;
-}
-.textBox {
-	width: 95%;
-    padding: 0.3rem;
-    border: solid 1px gray;
-    border-radius: 5px;
+    }
+
+    .destacado p {
+        font-weight: normal; 
+        font-size: 0.8rem;
+        margin: 10px 50px 50px auto;
+        width: 50%;
+        color: white;
+
+    }
+    .footterPading {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .mapaFooter{ /* mapa footer */
+        width: 100%;
+    }
+   
+    /* estilo clientes */
+   
+    #gridAreaNosotros {
+        display: grid; /* estructura grid por areas */
+        grid-template-areas: /* 4 columnas y 2 filas */
+        "title1" /* fila 1 */
+        "img" /* fila 1 */
+        "text1" /* fila 1 */
+        "titulolista" /* fila 1 */
+        "lista" /* fila 1 */
+        "text2" /* fila 1 */
+        ;
+
+        grid-template-columns: 100%;
+        grid-template-rows: 0.1fr 0.1fr 0.2fr 0.5fr 0.4fr auto;
+
+        /* espacios  */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    /* Index footer */
+    #tituloNosotros{
+        grid-area: title1;
+        text-align: center;
+    }
+
+    #texto1Nosotros {
+        padding: 10px 50px 10px 50px;
+        grid-area: text1;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: justify;
+
+    }
+
+    #imgNosotros {
+        grid-area: img;
+        text-align: center;
+    }
+
+    #tituloListaNosotros {
+        grid-area: titulolista;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    #listaNosotros {
+        grid-area: lista;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+
+    #texto2Nosotros {
+        padding: 10px 50px 10px 50px;
+        grid-area: text2;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: justify;
+
+    }
+    
+    
+    .imgNosotros2 {
+        height: 200px;
+    }
+
 }
