@@ -111,7 +111,6 @@
         grid-template-columns: 20% auto 15%;
         grid-template-rows: 1fr 4fr 1fr;
 
-        /* espacios  */
         grid-column-gap: 5px;
         grid-row-gap: 5px;
     }
@@ -124,9 +123,9 @@
         ;
         
         grid-template-columns: 33% 33% 33%;
-       grid-template-rows: 1fr
-        
-        /* espacios  */
+        grid-template-rows: 1fr;
+
+    
         grid-column-gap: 5px;
         grid-row-gap: 5px;
     }
@@ -481,7 +480,7 @@
     
 
         /* Index footer */
-         {
+        .textoInfo {
             grid-area: texto;
             display: flex;
             flex-direction: row;
